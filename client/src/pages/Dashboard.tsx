@@ -4,6 +4,7 @@ import { useGoals } from "@/hooks/use-goals";
 import { useUserSettings } from "@/hooks/use-user-settings";
 import { GoalCard } from "@/components/GoalCard";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Skeleton } from "@/components/ui/skeleton";
 import { AlertCircle, PiggyBank, Calendar, TrendingUp } from "lucide-react";
