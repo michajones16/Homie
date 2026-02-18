@@ -24,11 +24,11 @@ export default function Landing() {
                 <Button variant="outline" className="font-semibold">Go to Dashboard</Button>
               </Link>
             ) : (
-              <a href="/api/login">
+              <Link href="/login">
                 <Button className="font-semibold px-6 shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all">
                   Sign In
                 </Button>
-              </a>
+              </Link>
             )}
           </div>
         </div>
@@ -60,11 +60,11 @@ export default function Landing() {
                   </Button>
                 </Link>
               ) : (
-                <a href="/api/login">
+                <Link href="/login">
                   <Button size="lg" className="h-14 px-8 text-lg rounded-xl shadow-xl shadow-primary/20 hover:shadow-2xl hover:shadow-primary/30 transition-all">
                     Start Your Journey <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
-                </a>
+                </Link>
               )}
               <Button variant="outline" size="lg" className="h-14 px-8 text-lg rounded-xl border-2">
                 See How It Works

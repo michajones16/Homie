@@ -146,18 +146,18 @@ export default function Dashboard() {
              <h2 className="text-xl font-bold">Homie Tools</h2>
              <div className="space-y-3">
                {[
-                 { title: "Affordability Calculator", href: "#", color: "bg-blue-100 text-blue-700" },
-                 { title: "Mortgage Rates", href: "#", color: "bg-green-100 text-green-700" },
-                 { title: "Find an Agent", href: "#", color: "bg-orange-100 text-orange-700" },
+                 { title: "Affordability Calculator", color: "bg-blue-100 text-blue-700" },
+                 { title: "Mortgage Rates", color: "bg-green-100 text-green-700" },
+                 { title: "Find an Agent", color: "bg-orange-100 text-orange-700" },
                ].map((tool, i) => (
-                 <a key={i} href={tool.href} className="block group">
+                 <div key={i} className="block group cursor-pointer">
                    <div className="bg-card p-4 rounded-xl shadow-sm border border-border/50 hover:border-primary/50 transition-all flex items-center justify-between">
                       <span className="font-medium">{tool.title}</span>
                       <div className={`h-8 w-8 rounded-full flex items-center justify-center ${tool.color}`}>
                         <TrendingUp className="w-4 h-4" />
                       </div>
                    </div>
-                 </a>
+                 </div>
                ))}
              </div>
 
