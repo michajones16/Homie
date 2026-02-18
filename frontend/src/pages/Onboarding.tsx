@@ -12,7 +12,7 @@ import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { Card, CardContent } from "@/components/ui/card";
 import { Check, ChevronRight } from "lucide-react";
-import { insertUserSettingsSchema } from "@shared/schema";
+import { insertUserSettingsSchema } from "@shared/types";
 
 // Step 1: Savings & Targets
 const step1Schema = insertUserSettingsSchema.pick({

@@ -1,4 +1,4 @@
-import { type Goal } from "@shared/schema";
+import { type Goal } from "@shared/types";
 import { Card, CardContent } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useUpdateGoal, useDeleteGoal } from "@/hooks/use-goals";

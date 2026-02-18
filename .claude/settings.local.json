@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(timeout 5 npx tsx:*)",
+      "Bash(npm install:*)",
+      "Bash(npm uninstall:*)",
+      "Bash(lsof:*)",
+      "Bash(curl:*)",
+      "Bash(node -e:*)",
+      "Bash(npx vite build)",
+      "Bash(npx --prefix \"/Users/dawsonb/Documents/School/IS 401 - Cutler/Homie/frontend\" vite build:*)",
+      "Bash(# Check if this is a cloud-synced directory xattr -l \"\"/Users/dawsonb/Documents/School/IS 401 - Cutler/Homie\"\")",
+      "Read(//Users/dawsonb/Documents/School/**)",
+      "Bash(timeout 8 node:*)",
+      "Bash(echo:*)",
+      "Bash(npx tsc:*)",
+      "Bash(test:*)",
+      "Bash(psql:*)",
+      "Bash(chmod:*)",
+      "Bash(kill:*)",
+      "Bash(xargs kill:*)"
+    ]
+  }
+}

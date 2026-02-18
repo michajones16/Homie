@@ -1,5 +1,17 @@
 import { z } from 'zod';
-import { insertGoalSchema, insertUserSettingsSchema, goals, userSettings, resources } from './schema';
+import {
+  insertGoalSchema,
+  insertUserSettingsSchema,
+  type Goal,
+  type UserSettings,
+  type Resource,
+  type InsertGoal,
+  type UpdateGoalRequest,
+  type UpdateUserSettingsRequest,
+} from './types';
+
+// Re-export types that frontend hooks import from here
+export type { InsertGoal, UpdateGoalRequest, UpdateUserSettingsRequest };
 
 // ============================================
 // SHARED ERROR SCHEMAS
@@ -26,7 +38,7 @@ export const api = {
       method: 'GET' as const,
       path: '/api/goals' as const,
       responses: {
-        200: z.array(z.custom<typeof goals.$inferSelect>()),
+        200: z.array(z.custom<Goal>()),
       },
     },
     create: {
@@ -34,7 +46,7 @@ export const api = {
       path: '/api/goals' as const,
       input: insertGoalSchema,
       responses: {
-        201: z.custom<typeof goals.$inferSelect>(),
+        201: z.custom<Goal>(),
         400: errorSchemas.validation,
       },
     },
@@ -43,7 +55,7 @@ export const api = {
       path: '/api/goals/:id' as const,
       input: insertGoalSchema.partial(),
       responses: {
-        200: z.custom<typeof goals.$inferSelect>(),
+        200: z.custom<Goal>(),
         400: errorSchemas.validation,
         404: errorSchemas.notFound,
       },
@@ -56,7 +68,6 @@ export const api = {
         404: errorSchemas.notFound,
       },
     },
-    // Special endpoint to generate default goals for a new user
     generateDefaults: {
       method: 'POST' as const,
       path: '/api/goals/generate-defaults' as const,
@@ -65,40 +76,40 @@ export const api = {
       },
     }
   },
-  
+
   userSettings: {
     get: {
       method: 'GET' as const,
       path: '/api/user-settings' as const,
       responses: {
-        200: z.custom<typeof userSettings.$inferSelect>(),
-        404: errorSchemas.notFound, // Though we should probably return default if not found
+        200: z.custom<UserSettings>(),
+        404: errorSchemas.notFound,
       },
     },
     update: {
       method: 'PATCH' as const,
-      path: '/api/user-settings' as const, // Singleton per user
+      path: '/api/user-settings' as const,
       input: insertUserSettingsSchema.partial(),
       responses: {
-        200: z.custom<typeof userSettings.$inferSelect>(),
+        200: z.custom<UserSettings>(),
         400: errorSchemas.validation,
       },
     },
   },
-  
+
   resources: {
     list: {
       method: 'GET' as const,
       path: '/api/resources' as const,
       responses: {
-        200: z.array(z.custom<typeof resources.$inferSelect>()),
+        200: z.array(z.custom<Resource>()),
       },
     },
     get: {
       method: 'GET' as const,
       path: '/api/resources/:id' as const,
       responses: {
-        200: z.custom<typeof resources.$inferSelect>(),
+        200: z.custom<Resource>(),
         404: errorSchemas.notFound,
       },
     },
