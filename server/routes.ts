@@ -15,7 +15,7 @@ export async function registerRoutes(
 
   // === Goals Routes ===
   app.get(api.goals.list.path, isAuthenticated, async (req: any, res) => {
-    const userId = req.user.claims.sub;
+    const userId = (req.session as any).userId;
     const goals = await storage.getGoals(userId);
     res.json(goals);
   });
@@ -23,7 +23,7 @@ export async function registerRoutes(
   app.post(api.goals.create.path, isAuthenticated, async (req: any, res) => {
     try {
       const input = api.goals.create.input.parse(req.body);
-      const userId = req.user.claims.sub;
+      const userId = (req.session as any).userId;
       const goal = await storage.createGoal({ ...input, userId });
       res.status(201).json(goal);
     } catch (err) {
@@ -45,7 +45,7 @@ export async function registerRoutes(
       
       // Verify ownership
       const goal = await storage.getGoal(id);
-      if (!goal || goal.userId !== req.user.claims.sub) {
+      if (!goal || goal.userId !== (req.session as any).userId) {
         return res.status(404).json({ message: "Goal not found" });
       }
 
@@ -66,7 +66,7 @@ export async function registerRoutes(
   app.delete(api.goals.delete.path, isAuthenticated, async (req: any, res) => {
     const id = parseInt(req.params.id);
     const goal = await storage.getGoal(id);
-    if (!goal || goal.userId !== req.user.claims.sub) {
+    if (!goal || goal.userId !== (req.session as any).userId) {
       return res.status(404).json({ message: "Goal not found" });
     }
     await storage.deleteGoal(id);
@@ -74,7 +74,7 @@ export async function registerRoutes(
   });
 
   app.post(api.goals.generateDefaults.path, isAuthenticated, async (req: any, res) => {
-    const userId = req.user.claims.sub;
+    const userId = (req.session as any).userId;
     const existingGoals = await storage.getGoals(userId);
     
     if (existingGoals.length > 0) {
@@ -106,7 +106,7 @@ export async function registerRoutes(
 
   // === User Settings Routes ===
   app.get(api.userSettings.get.path, isAuthenticated, async (req: any, res) => {
-    const userId = req.user.claims.sub;
+    const userId = (req.session as any).userId;
     const settings = await storage.getUserSettings(userId);
     if (!settings) {
       // Create default if not exists
@@ -119,7 +119,7 @@ export async function registerRoutes(
   app.patch(api.userSettings.update.path, isAuthenticated, async (req: any, res) => {
     try {
       const input = api.userSettings.update.input.parse(req.body);
-      const userId = req.user.claims.sub;
+      const userId = (req.session as any).userId;
       const updated = await storage.updateUserSettings(userId, input);
       res.json(updated);
     } catch (err) {
