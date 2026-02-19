@@ -32,6 +32,24 @@ Homie is a web app created to help first-time home buyers in Utah understand the
 ### Environment Configuration
 - .env environment variable configuration
 
+## Architecture Diagram
+
+```
+[ User / Browser ]
+        |
+        | HTTP (UI) + Cookies (session)
+        v
+[ React + Vite Frontend ]
+        |
+        | REST API calls to /api/*
+        v
+[ Node.js + Express API ]
+        |
+        | SQL queries (pg)
+        v
+[ PostgreSQL ]
+```
+
 ## Project Structure
 
 ```
