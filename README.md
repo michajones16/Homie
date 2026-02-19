@@ -34,7 +34,7 @@ Homie is a web app created to help first-time home buyers in Utah understand the
 
 ## Architecture Diagram
 
-```
+```text
 [ User / Browser ]
         |
         | HTTP (UI) + Cookies (session)
@@ -61,12 +61,15 @@ shared/     – Shared types and schemas
 
 ## Prerequisites
 
-- Node.js 18+
-- PostgreSQL 14+
+- Node.js 18+ (https://nodejs.org/en/download)
+- PostgreSQL 14+ (https://www.postgresql.org/download/)
+- psql available in system PATH
 
-Verify Postgres is installed:
+Verify Installations:
 
 ```bash
+node -v
+npm -v
 psql --version
 ```
 
