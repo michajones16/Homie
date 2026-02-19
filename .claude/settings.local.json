@@ -18,7 +18,8 @@
       "Bash(psql:*)",
       "Bash(chmod:*)",
       "Bash(kill:*)",
-      "Bash(xargs kill:*)"
+      "Bash(xargs kill:*)",
+      "Bash(python3:*)"
     ]
   }
 }
