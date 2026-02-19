@@ -1,5 +1,9 @@
 # Homie – Home Buying Goal Tracker
 
+## Project Summary
+
+Homie is a web app created to help first-time home buyers in Utah understand the process, resources, and necessary steps to prepare to buy their first home. We found that first time home buyers struggle in the home-buying process as savings needs are overwhelming, fees seem to pop up out of nowhere, and resources are hard to find and sometimes seem like they are trying to take advantage of customers. Out target customers are first time home buyers in Utah who do not have large amounts of savings and are trying to get in a financially smart position to purchase a home. Our web app gets new user information and tailors tasks, savings goals, and timelines to their needs. It has a step-by-step checklist to help users keep track of their progress and ensure that they are maximizing the resources that are available in Utah.
+
 ## Project Structure
 
 ```
