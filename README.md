@@ -13,6 +13,33 @@ db/         – PostgreSQL schema and seed data
 shared/     – Shared types and schemas
 ```
 
+##Tech Stack
+####Architecture: PERN Stack (PostgreSQL, Express, React, Node.js)
+
+###Frontend
+React
+Vite
+TypeScript
+
+###Backend
+Node.js
+Express 5
+TypeScript
+tsx (TypeScript runtime for development)
+
+###Database
+PostgreSQL
+node-postgres (pg) driver
+
+###Authentication
+Session-based authentication
+bcryptjs (password hashing)
+cookie-parser (session cookie handling)
+Development auto-login route
+
+###Environment Configuration
+.env environment variable configuration
+
 ## Prerequisites
 
 - Node.js 18+
