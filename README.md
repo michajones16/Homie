@@ -94,7 +94,7 @@ cd backend && npm install
 psql -U postgres -c "CREATE DATABASE signspeak_dev;"
 ```
 
-If the port you run Postgres on is different than 5432 specify it in the script by adding "-p INSERT_PORT_HERE" to the end. Do that to the other psql scripts if needed.
+If the port you run Postgres on is different than 5432 specify it in the command by adding "-p INSERT_PORT_HERE" to the end. Do that to the other psql commands if needed.
 
 ### 3. Run schema and seed
 
