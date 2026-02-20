@@ -94,6 +94,8 @@ cd backend && npm install
 psql -U postgres -c "CREATE DATABASE signspeak_dev;"
 ```
 
+If the port you run Postgres on is different than 5432 specify it in the script by adding "-p INSERT_PORT_HERE" to the end. Do that to the other psql scripts if needed.
+
 ### 3. Run schema and seed
 
 ```bash
@@ -193,3 +195,42 @@ curl -X POST http://localhost:3001/api/auth/register \
 | POST | `/api/reviews` | Create review |
 | GET | `/api/resources` | List resources |
 | GET | `/api/resources/:id` | Get resource detail |
+
+## Verifying Account Creation (Vertical Slice)
+
+### Prerequisites
+- Backend server running (`npm run dev` in `/backend`)
+- Frontend running (`npm run dev` in `/frontend`)
+- PostgreSQL running with `signspeak_dev` database
+
+### Steps to Verify the Vertical Slice
+
+1. **Create an Account**
+   - Navigate to the Login page
+   - Click "Sign Up"
+   - Enter a username, email, password, and name
+   - Click "Create Account"
+   - You should be redirected to the Dashboard
+
+2. **Verify the Database Was Updated**
+   - Open a terminal and connect to PostgreSQL:
+     ```bash
+     psql -U postgres -d signspeak_dev -h localhost
+     ```
+   - Query the users table with your username:
+     ```sql
+     SELECT username, email, first_name, last_name FROM public.users WHERE username = 'your_username';
+     ```
+     (Replace `'your_username'` with the username you created)
+   - Confirm your user appears with the correct email and name
+
+3. **Verify the Change Persists**
+   - Refresh the page in your browser
+   - Confirm you remain logged in and can see your account data
+   - Log out and log back in with your credentials
+   - Run the query again to confirm the account still exists
+
+### Expected Outcome
+- New user row created in the `users` table with hashed password
+- User session persists across page refreshes
+- User can successfully log in again
