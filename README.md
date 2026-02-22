@@ -129,9 +129,9 @@ Example `DATABASE_URL` for local dev:
 ```
 DATABASE_URL=postgresql://postgres:password@localhost:5432/signspeak_dev
 ```
-Note: postgres:password must be replaced with your PostgresUsername:PostgresPassword on your local postgres
 
 Edit `backend/.env` if your Postgres credentials differ.
+Note: postgres:password must be replaced with your PostgresUsername:PostgresPassword on your local postgres
 
 ## Running Dev Servers
 
