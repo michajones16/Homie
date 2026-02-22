@@ -128,7 +128,8 @@ cp backend/.env.example backend/.env
 
 ### 6. Ensure the `DATABASE_URL` in backend/.env uses the correct username and password for your postgres
 
-Navigate to backend/.env inside of the Homie folder
+- Navigate to backend/.env inside of the Homie folder
+- Change password (and username if needed) inside `DATABASE_URL` to your credentials
 
 Example `DATABASE_URL` for local dev:
 
