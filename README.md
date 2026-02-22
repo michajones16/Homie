@@ -108,7 +108,7 @@ psql -U postgres -d signspeak_dev -f db/seed.sql
 
 The seed file is **idempotent** – you can re-run it safely without creating duplicates.
 
-### 4. Verify tables were created
+### 4. Verify tables were created (There should be 5)
 
 ```bash
 psql -U postgres -d signspeak_dev -c "\dt"
