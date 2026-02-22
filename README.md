@@ -154,7 +154,7 @@ npm run dev:backend    # Express on http://localhost:3001
 
 The frontend Vite dev server proxies `/api/*` requests to the backend automatically.
 
-### 8. You're all set to test now!
+### 8. You're all set to test now! Scroll down to "Verifying Account Creation (Vertical Slice)" to see what to test!
 
 ## Auth (Dev Mode)
 
