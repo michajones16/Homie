@@ -123,11 +123,13 @@ psql -U postgres -d signspeak_dev -c "SELECT user_id, username, email, first_nam
 cp backend/.env.example backend/.env
 ```
 
+Ensure the `DATABASE_URL` in /backend/.env is uses the correct username and password for your postgres
 Example `DATABASE_URL` for local dev:
 
 ```
-DATABASE_URL=postgresql://postgres:postgres@localhost:5432/signspeak_dev
+DATABASE_URL=postgresql://postgres:password@localhost:5432/signspeak_dev
 ```
+Note: postgres:password must be replaced with your PostgresUsername:PostgresPassword on your local postgres
 
 Edit `backend/.env` if your Postgres credentials differ.
 
