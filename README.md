@@ -141,7 +141,7 @@ Edit `backend/.env` if your Postgres credentials differ.
 
 Note: `postgres:password` must be replaced with your PostgresUsername:PostgresPassword of your local postgres
 
-## Running Dev Servers
+### 7. Run Dev Servers
 
 ```bash
 # Both frontend and backend concurrently
@@ -153,6 +153,8 @@ npm run dev:backend    # Express on http://localhost:3001
 ```
 
 The frontend Vite dev server proxies `/api/*` requests to the backend automatically.
+
+### You're all set to test now!
 
 ## Auth (Dev Mode)
 
