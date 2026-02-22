@@ -210,7 +210,7 @@ curl -X POST http://localhost:3001/api/auth/register \
    - Click "Sign Up"
    - Enter a username, email, password, and name
    - Click "Create Account"
-   - You should be redirected to the Dashboard
+   - You should be redirected to the Dashboard with your name showing (after setting some brief savings goals)
 
 2. **Verify the Database Was Updated**
    - Open a terminal and connect to PostgreSQL:
