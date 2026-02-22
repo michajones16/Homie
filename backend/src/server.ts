@@ -61,6 +61,16 @@ app.get("/api/db-ping", async (_req, res) => {
   }
 });
 
+app.get("/api/health/db", async (_req, res) => {
+  try {
+    await dbQuery("SELECT 1");
+    res.json({ status: "ok", database: "connected" });
+  } catch (err) {
+    const message = err instanceof Error ? err.message : "Unknown error";
+    res.status(503).json({ status: "error", database: "unreachable", message });
+  }
+});
+
 // ── Auth ─────────────────────────────────────────────────────────────
 
 app.get("/api/auth/user", async (req, res) => {
