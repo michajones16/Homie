@@ -85,7 +85,10 @@ npm install
 cd frontend && npm install
 
 # Backend
-cd backend && npm install
+cd ../backend && npm install
+
+# Get back to Homie Directory
+cd ../
 ```
 
 ### 2. Create the database
